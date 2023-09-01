@@ -1,0 +1,7 @@
+﻿sample,quant_file,condition
+Sample_1_1,./Sample_1_1.salmon/quant.sf,Sample_1_1
+Sample_1_2,./Sample_1_2.salmon/quant.sf,Sample_1_2
+Sample_1_3,./Sample_1_3.salmon/quant.sf,Sample_1_3
+Sample_2_1,./Sample_2_1.salmon/quant.sf,Sample_2_1
+Sample_2_2,./Sample_2_2.salmon/quant.sf,Sample_2_2
+Sample_2_3,./Sample_2_3.salmon/quant.sf,Sample_2_3
