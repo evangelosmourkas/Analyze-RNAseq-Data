@@ -150,7 +150,7 @@ ggplot(test_df, aes(x=log2FoldChange, y=-log10(padj), name = Gene)) +
   theme(legend.position = 'top')
 dev.off()
 ```
-## Alternative to volcano plot with gene names on
+## Alternative to volcano plot with gene names
 ```
 ggmaplot(filter_df1, fdr = 0.05, fc = 2, genenames= NULL, size = 1, alpha = 1, 
          font.label = c(9, "bold"), palette = c("#B31B21", "#1454AC", "darkgray"),
@@ -163,7 +163,7 @@ anno_df3 <- tibble::rownames_to_column(filter_df3, "Gene")
 dim(anno_df3)
 ```
 
-# Set up differentially expressed genes - visualize in a heatmap
+## Set up differentially expressed genes - Heatmap visualization
 ```
 degs = anno_df3$Gene
 vst_mat = assay(vst)
