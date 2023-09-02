@@ -1,0 +1,15 @@
+{
+    "salmon_version": "1.4.0",
+    "index": "selective_align_cgMLST_index/",
+    "libType": "a",
+    "mates1": "2-N222_1-2_CCAGACCGAT-TGCAAGTAGC_L002_R1_001.fastq.gz",
+    "mates2": "2-N222_1-2_CCAGACCGAT-TGCAAGTAGC_L002_R2_001.fastq.gz",
+    "validateMappings": [],
+    "threads": "30",
+    "numBootstraps": "30",
+    "seqBias": [],
+    "posBias": [],
+    "auxDir": "aux_info",
+    "output": "N222_1_2.salmon",
+    "auxDir": "aux_info"
+}
