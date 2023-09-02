@@ -1,0 +1,22 @@
+{
+    "read_files": "[ 10-N188_1-1_CCACAGCCTT-CTTCAATAGC_L002_R1_001.fastq.gz, 10-N188_1-1_CCACAGCCTT-CTTCAATAGC_L002_R2_001.fastq.gz]",
+    "expected_format": "ISR",
+    "compatible_fragment_ratio": 1.0,
+    "num_compatible_fragments": 13059292,
+    "num_assigned_fragments": 13059292,
+    "num_frags_with_concordant_consistent_mappings": 12409655,
+    "num_frags_with_inconsistent_or_orphan_mappings": 674970,
+    "strand_mapping_bias": 0.00008653802689592207,
+    "MSF": 0,
+    "OSF": 0,
+    "ISF": 1074,
+    "MSR": 0,
+    "OSR": 0,
+    "ISR": 12409655,
+    "SF": 297964,
+    "SR": 375932,
+    "MU": 0,
+    "OU": 0,
+    "IU": 0,
+    "U": 0
+}
