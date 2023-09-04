@@ -77,7 +77,7 @@ counts(dds)[1:6, 1:6]
 txi$counts[1:6, 1:6]
 boxplot(txi$counts)
 ```
-![boxplots](https://github.com/evangelosmourkas/Analyze-RNAseq-Data/assets/73548463/d025d764-0ccd-4406-9355-310de6b211f2)
+![boxplots](https://github.com/evangelosmourkas/Analyze-RNAseq-Data/assets/73548463/97932d71-5610-4b45-b288-bdb0632be0ab)
 ## Check counts after normalization
 ```
 dds = estimateSizeFactors(dds)
@@ -85,18 +85,18 @@ normalizationFactors(dds)
 counts(dds, normalized = TRUE)[1:6,1:6]
 boxplot(counts(dds, normalized=TRUE))
 ```
-![boxplots_norm](https://github.com/evangelosmourkas/Analyze-RNAseq-Data/assets/73548463/2a92da74-0849-4621-93ac-27b29423ebec
+![boxplots_norm](https://github.com/evangelosmourkas/Analyze-RNAseq-Data/assets/73548463/560b96ca-aad0-43af-aa21-faf45bd84b67)
 ## Variance stabilized transformation on the count data, while controlling for library size of samples
 ```
 vst <- varianceStabilizingTransformation(dds)
 boxplot(assay(vst))
 ```
-![boxplots_lognorm](https://github.com/evangelosmourkas/Analyze-RNAseq-Data/assets/73548463/9bb9187b-a762-43ea-bbc6-5f284b70cbed)
+![boxplots_lognorm](https://github.com/evangelosmourkas/Analyze-RNAseq-Data/assets/73548463/b5268289-e795-446a-bf08-bb7783d0a985)
 ## PCA analysis 
 ```
 plotPCA(vst, intgroup= 'condition') + theme_bw()
 ```
-![PCA](https://github.com/evangelosmourkas/Analyze-RNAseq-Data/assets/73548463/83707862-340c-4e58-b02f-4f4014e53a87)
+![PCA](https://github.com/evangelosmourkas/Analyze-RNAseq-Data/assets/73548463/61a3ab53-3776-4d76-8a21-0a3b61f58224)
 ## Distance matrix calculation using euclidean (best method) between samples
 ```
 d = assay(vst)
@@ -109,14 +109,14 @@ h = hclust(d)
 plot(h)
 k = kmeans(t(assay(vst)), centers = 2)
 ```
-![hclustering](https://github.com/evangelosmourkas/Analyze-RNAseq-Data/assets/73548463/717705d5-9eee-4f0a-8e4b-ec2be64b668c)
+![hclustering](https://github.com/evangelosmourkas/Analyze-RNAseq-Data/assets/73548463/38f1e210-db43-4730-ab44-7c9c72c95812)
 ## Estimate dispersions of variance - distribution to see whether genes are differential expressed
 Uses variance across the whole experiment to submit disperse estimates to shrinkage - imperial bayesian shrinkage
 ```
 dds = estimateDispersions(dds)
 plotDispEsts(dds)
 ```
-![Dispersion](https://github.com/evangelosmourkas/Analyze-RNAseq-Data/assets/73548463/a03398f9-c7a4-4993-bd98-d8d85431f715)
+![Dispersion](https://github.com/evangelosmourkas/Analyze-RNAseq-Data/assets/73548463/e56b2947-dd30-4618-9a65-751bd83e7e7f)
 Note: Mean and variance in RNASeq data are not independent from one another. The variance is not continuous with the mean of the count data. As the mean of normalized counts continuous, the variance goes down, so the dispersion reduces as the mean counts goes up. The black points (raw estimate of dispersion) are the genewise estimates of dispersion (for each gene for the 6 observations the dispersion has been estimated). Mean of the counts and the mean of the dispersion (mean dispersion - red points). The bayesian shrinkage estimation is applied - the black points are shrank towards that red fitted disperse estimates (blue points).
 ## Apply Wald test across the negative binomial distributions
 ```
@@ -141,7 +141,7 @@ Note: baseMean - the average normalized count for each gene across all samples i
 ```
 plotCounts(dds, gene='NEIS1437', intgroup = 'condition')
 ```
-![Gene_example](https://github.com/evangelosmourkas/Analyze-RNAseq-Data/assets/73548463/ac8091d8-218b-4797-a4c7-64161324c993)
+![Gene_example](https://github.com/evangelosmourkas/Analyze-RNAseq-Data/assets/73548463/915d8bd9-a8bd-442d-bea5-025a7dbba192)
 ## Filter results with padj < 0.05 , log2FoldChange > 1 < -1
 ```
 filter_df1$test = filter_df1$padj < 0.05 & abs(filter_df1$log2FoldChange) > 1
@@ -164,7 +164,7 @@ ggplot(test_df, aes(x=log2FoldChange, y=-log10(padj), name = Gene)) +
   theme(legend.position = 'top')
 dev.off()
 ```
-![Volcano_plot](https://github.com/evangelosmourkas/Analyze-RNAseq-Data/assets/73548463/95cc71f2-82b8-4d3d-ad4e-72f405f4ec30)
+![Volcano_plot](https://github.com/evangelosmourkas/Analyze-RNAseq-Data/assets/73548463/17295186-e173-4341-b152-a3e6f640bf14)
 ## Alternative to volcano plot with gene names
 ```
 ggmaplot(filter_df1, fdr = 0.05, fc = 2, genenames= NULL, size = 1, alpha = 1, 
@@ -174,7 +174,7 @@ ggmaplot(filter_df1, fdr = 0.05, fc = 2, genenames= NULL, size = 1, alpha = 1,
 )
 dev.off()
 ```
-![MA_plot](https://github.com/evangelosmourkas/Analyze-RNAseq-Data/assets/73548463/fe324818-1f76-42ed-8336-cd8b7c1ba9a4)
+![MA_plot](https://github.com/evangelosmourkas/Analyze-RNAseq-Data/assets/73548463/407dfa23-ec8a-424f-b7a8-f40e419c6fe6)
 ## Set up differentially expressed genes - Heatmap visualization
 ```
 anno_df3 <- tibble::rownames_to_column(filter_df3, "Gene")
@@ -187,8 +187,7 @@ dim(data_for_hm)
 pheatmap(data_for_hm, fontsize_row = 4, scale = 'row', cutree_cols = 2, cutree_rows = 2, border_color = NA)
 dev.off()
 ```
-![Heatmap](https://github.com/evangelosmourkas/Analyze-RNAseq-Data/assets/73548463/0d7a222a-bc9a-4aa6-915d-10ab2c3ba811)
-
+![Heatmap](https://github.com/evangelosmourkas/Analyze-RNAseq-Data/assets/73548463/35750064-71f6-4c2f-86c2-c4b74ab3e152)
 # How to cite
 Monteith, W., Pascoe, B., Mourkas, E., Clark, J., Hakim, M., Hitchings, M.D., McCarthy, N., Yahara, K., Asakura, H., Sheppard, S.K. (2023), **Contrasting genes conferring short and long-term biofilm adaptation in _Listeria_** 
 bioRxiv 2023.06.22.546149. https://doi.org/10.1101/2023.06.22.546149
