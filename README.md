@@ -187,4 +187,4 @@ dev.off()
 ![Heatmap](https://github.com/evangelosmourkas/Analyze-RNAseq-Data/assets/73548463/35750064-71f6-4c2f-86c2-c4b74ab3e152)
 # How to cite
 Monteith, W., Pascoe, B., Mourkas, E., Clark, J., Hakim, M., Hitchings, M.D., McCarthy, N., Yahara, K., Asakura, H., Sheppard, S.K. (2023), **Contrasting genes conferring short and long-term biofilm adaptation in _Listeria_** 
-bioRxiv 2023.06.22.546149. https://doi.org/10.1101/2023.06.22.546149
+Microbial Genomics (in press). bioRxiv 2023.06.22.546149. https://doi.org/10.1101/2023.06.22.546149
