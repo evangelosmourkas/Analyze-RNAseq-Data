@@ -2,9 +2,6 @@
 This repository contains the required script to analyze RNAseq data, with a focus on differential gene expression using DESeq2.
 The script has been provided as an Rscript and can be run locally in Rstudio or Visual Studio Core.
 
-## Preprint
-The methodology underlying the use of the script has been detailed in the preprint "Contrasting genes conferring short and long-term biofilm adaptation in _Listeria_". Plese refer to citation information at the bottom of this document.
-
 ## Files Summary
 The files include data for two strains (three replicates for each strain), each strain representing a different condition. Briefly, illumina sequence reads were mapped to a reference transcriptome index using Salmon. Gene expression was calculated in units of transcripts per million (TPM) by Salmon, a relative abundance measure used for downstream analysis with DESeq2. Each directory has the following:
 * **_Salmon_TPM_data_**: directory with data from the two strains used in the analysis
